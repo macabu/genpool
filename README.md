@@ -50,3 +50,8 @@ func main() {
     print(item)
 }
 ```
+
+## Testing
+```sh
+$ make test
+```

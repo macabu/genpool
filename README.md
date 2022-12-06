@@ -10,21 +10,21 @@ import (
 
 func main() {
     // How many items the pool can hold before blocking callers
-	poolSize := 2
+    poolSize := 2
 
-	// This can be a callback with side-effects (API calls etc)
-	seeder := func() (string, error) {
-		return "item", nil
-	}
+    // This can be a callback with side-effects (API calls etc)
+    seeder := func() (string, error) {
+        return "item", nil
+    }
 
     // Side-effectful, can be used to delete data elsewhere
-	resetter := func(_ string) error {
-		return nil
-	}
+    resetter := func(_ string) error {
+        return nil
+    }
 
     // `seeder` is called before pushing data to the channel
-	pool, err := genpool.NewPool(poolSize, seeder, resetter)
-	if err != nil {
+    pool, err := genpool.NewPool(poolSize, seeder, resetter)
+    if err != nil {
         panic(err)
     }
 

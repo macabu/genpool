@@ -1,6 +1,8 @@
 # genpool
 
 A lock-free blocking pool of generic items.
+  
+Requires Go 1.18+
 
 ## Usage
 ```go
